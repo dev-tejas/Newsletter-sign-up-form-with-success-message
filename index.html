@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Sign-up Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlT5lOJC7AE8dYI2pFlK5F5OjHIX5F+OGpF7aRS2dbHtcF5qMv5vux2Y5Abe5rB" crossorigin="anonymous">
+    <style>
+        /* Custom styles for the form and page */
+        body {
+            background: linear-gradient(to bottom, #007bff, #0056b3);
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .alert {
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .notification-list {
+            text-align: left;
+        }
+
+        .notification-item {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .splash-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        h1, h2, p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>Welcome to Our Newsletter</h1>
+            <p>Stay up-to-date with the latest news and updates</p>
+        </div>
+        <form id="signup-form">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Notification Preferences</label>
+                <div class="notification-list">
+                    <div class="form-check notification-item">
+                        <input class="form-check-input" type="checkbox" id="newsCheckbox" name="notifications[]" value="news">
+                        <label class="form-check-label" for="newsCheckbox">
+                            News Updates
+                        </label>
+                    </div>
+                    <div class="form-check notification-item">
+                        <input class="form-check-input" type="checkbox" id="eventsCheckbox" name="notifications[]" value="events">
+                        <label class="form-check-label" for="eventsCheckbox">
+                            Events &amp; Announcements
+                        </label>
+                    </div>
+                    <div class="form-check notification-item">
+                        <input class="form-check-input" type="checkbox" id="promotionsCheckbox" name="notifications[]" value="promotions">
+                        <label class="form-check-label" for="promotionsCheckbox">
+                            Promotions &amp; Discounts
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <div id="success-message" class="mt-3 alert alert-success" style="display: none;">
+            Thank you for signing up for our newsletter!
+        </div>
+        <!-- Static image from Unsplash -->
+        <img class="splash-image" src="https://media.istockphoto.com/id/1427270213/photo/businessman-holding-hand-touchscreen-smartphone-and-checking-email-icon-online-or-sending.jpg?s=1024x1024&w=is&k=20&c=31sBpBBuBztz4ElcGMhrrdN8kNGKqW2jVJaU3IKO4E8=" alt="Unsplash Image">
+    </div>
+
+    <!-- Include Bootstrap JavaScript (popper.js and bootstrap.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-OE/Yw3z5D0f5qKfXr5+OGpOz5mcjHQKLz1F5f5Jl5uH8pCXLmeIkgF5h5F5j5f5l5" crossorigin="anonymous"></script>
+
+    <!-- Your custom JavaScript code -->
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Simulate a successful form submission (you can replace this with your own logic)
+            // For example, you can send the email and preferences to your server and return a success response.
+            // For this example, we'll just display the success message.
+            document.getElementById("signup-form").style.display = "none";
+            document.getElementById("success-message").style.display = "block";
+        });
+    </script>
+</body>
+</html>
